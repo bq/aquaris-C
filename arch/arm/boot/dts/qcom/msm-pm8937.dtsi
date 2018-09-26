@@ -103,7 +103,7 @@
 				qcom,pin-num = <2>;
 				qcom,mode = <4>; /* AIN input */
 				qcom,invert = <1>; /* Enable MPP */
-				qcom,ain-route = <1>; /* AMUX 6 */
+				qcom,ain-route = <3>; /* AMUX 8 */
 				qcom,master-en = <1>;
 				qcom,src-sel = <0>; /* Function constant */
 			};
@@ -271,7 +271,7 @@
 				qcom,hw-settle-time = <2>;
 				qcom,fast-avg-setup = <0>;
 			};
-
+			/*
 			chan@11 {
 				label = "pa_therm1";
 				reg = <0x11>;
@@ -283,7 +283,7 @@
 				qcom,fast-avg-setup = <0>;
 				qcom,vadc-thermal-node;
 			};
-
+			*/
 			chan@32 {
 				label = "xo_therm";
 				reg = <0x32>;
@@ -308,9 +308,9 @@
 				qcom,vadc-thermal-node;
 			};
 
-			chan@13 {
+			chan@11 {
 				label = "case_therm";
-				reg = <0x13>;
+				reg = <0x11>;
 				qcom,decimation = <0>;
 				qcom,pre-div-channel-scaling = <0>;
 				qcom,calibration-type = "ratiometric";

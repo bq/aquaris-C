@@ -200,6 +200,9 @@ dtb-$(CONFIG_ARCH_MSM8937) += msm8937-rumi.dtb \
 	apq8037-pmi8950-mtp.dtb \
 	apq8037-pmi8937-mtp.dtb
 
+ifeq ($(CONFIG_JEICE_COMMON),y)
+dtb-$(CONFIG_ARCH_MSM8937) +=  jeice.dtb
+else
 dtb-$(CONFIG_ARCH_MSM8917) += msm8917-rumi.dtb \
 	apq8017-pmi8937-cdp.dtb \
 	apq8017-pmi8937-mtp.dtb \
@@ -221,6 +224,7 @@ dtb-$(CONFIG_ARCH_MSM8917) += msm8917-rumi.dtb \
 	apq8017-pmi8937-cdp-wcd-rome.dtb \
 	apq8017-pmi8950-cdp-wcd-rome.dtb \
 	apq8017-no-pmi-wcd-rome-cdp.dtb
+endif
 
 dtb-$(CONFIG_ARCH_MSM8920) += msm8920-pmi8937-cdp.dtb \
 	msm8920-pmi8937-mtp.dtb \
@@ -250,7 +254,6 @@ dtb-$(CONFIG_ARCH_MSM8953) += msm8953-sim.dtb \
 	msm8953-cdp.dtb \
 	msm8953-mtp.dtb \
 	msm8953-ext-codec-mtp.dtb \
-	msm8953-qrd-sku3.dtb \
 	msm8953-rcm.dtb \
 	apq8053-rcm.dtb \
 	msm8953-ext-codec-rcm.dtb \
@@ -271,7 +274,8 @@ dtb-$(CONFIG_ARCH_MSM8953) += msm8953-sim.dtb \
 	msm8953-pmi8937-cdp.dtb \
 	msm8953-pmi8937-mtp.dtb \
 	msm8953-pmi8940-ext-codec-mtp.dtb \
-	msm8953-pmi8937-ext-codec-mtp.dtb
+	msm8953-pmi8937-ext-codec-mtp.dtb \
+	bardock.dtb
 
 dtb-$(CONFIG_ARCH_SDM450) += sdm450-rcm.dtb \
 	sdm450-cdp.dtb \
