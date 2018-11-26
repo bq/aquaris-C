@@ -189,6 +189,8 @@
 				39 01 00 00 00 00 02 00 A1
 				39 01 00 00 00 00 08 CE 00 06 00 00 01 01 01
 				39 01 00 00 00 00 02 35 00
+				15 01 00 00 00 00 02 00 98
+				15 01 00 00 00 00 02 B0 0C
 				05 01 00 00 c8 00 02 11 00
 				05 01 00 00 64 00 02 29 00
 		];
@@ -214,9 +216,9 @@
 		qcom,mdss-dsi-lane-1-state;
 		qcom,mdss-dsi-lane-2-state;
 		qcom,mdss-dsi-lane-3-state;
-		qcom,mdss-dsi-panel-timings = [7B 1A 10 00 3E 40 16 1E 15 03 04 00];
+		qcom,mdss-dsi-panel-timings = [7B 1E 14 00 44 4A 18 22 19 03 04 00];
 		qcom,mdss-dsi-t-clk-post = <0x04>;
-		qcom,mdss-dsi-t-clk-pre = <0x1A>;
+		qcom,mdss-dsi-t-clk-pre = <0x1B>;
 		qcom,mdss-dsi-bl-min-level = <1>;
 		qcom,mdss-dsi-bl-max-level = <255>;
 		qcom,mdss-dsi-dma-trigger = "trigger_sw";
