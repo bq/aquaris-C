@@ -216,7 +216,7 @@
  * if FTS_GET_VENDOR_ID_NUM >= 2, fw corrsponding with FTS_VENDOR_ID2
  * define your own fw_file, the sample one is invalid
  */
-#define FTS_UPGRADE_FW2_FILE                     "include/firmware/FT8716_FW_CSOT_5P47_V08_D01_20180725_app.i"
+#define FTS_UPGRADE_FW2_FILE                     "include/firmware/FT8716_FW_CSOT_5P47_V0C_D01_20181026_app.i"
 
 /*
  * if FTS_GET_VENDOR_ID_NUM >= 3, fw corrsponding with FTS_VENDOR_ID3

@@ -50,6 +50,8 @@
 #include <linux/tee_drv.h>
 #endif
 
+#define SF_INPUT_FP_TAP 608
+
 //---------------------------------------------------------------------------------
 #define SF_DRV_VERSION "v2.2.11-2018-03-30"
 
@@ -234,8 +236,14 @@ static irqreturn_t sf_ctl_device_irq(int irq, void *dev_id)
     sf_ctl_set_irq_type(IRQF_TRIGGER_RISING | IRQF_NO_SUSPEND | IRQF_ONESHOT);
 #endif
 
+	printk("%s sf_ctl_dev.wait_finger_down:%d sf_ctl_dev.fb_black:%d\n",__func__, sf_ctl_dev.wait_finger_down, sf_ctl_dev.fb_black);
+
 	if(sf_ctl_dev.wait_finger_down && sf_ctl_dev.fb_black){
 		printk("%s enter\n",__func__);
+		input_report_key(sf_ctl_dev.input, SF_INPUT_FP_TAP, 1);
+		input_sync(sf_ctl_dev.input);
+		input_report_key(sf_ctl_dev.input, SF_INPUT_FP_TAP, 0);
+		input_sync(sf_ctl_dev.input);
 		sf_ctl_dev.wait_finger_down = false;
 		schedule_work(&sf_ctl_dev.work);
 	}
@@ -959,6 +967,7 @@ static int sf_ctl_init_input(void)
     __set_bit(KEY_RIGHT,  sf_ctl_dev.input->keybit);
     __set_bit(KEY_DOWN,   sf_ctl_dev.input->keybit);
     __set_bit(KEY_WAKEUP, sf_ctl_dev.input->keybit);
+    __set_bit(SF_INPUT_FP_TAP, sf_ctl_dev.input->keybit);
     err = input_register_device(sf_ctl_dev.input);
 
     if (err) {
