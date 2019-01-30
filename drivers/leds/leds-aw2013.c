@@ -1,5 +1,6 @@
 /*
  * leds-aw2013.c - RGB LED Driver
+ * Copyright (c) 2015, 2018 The Linux Foundation. All rights reserved.
  *
  * Copyright (C) 2009 Samsung Electronics
  * Kim Kyuwon <q1.kim@samsung.com>
