@@ -262,7 +262,7 @@ static void cpuboost_input_event(struct input_handle *handle,
 {
 	u64 now;
 
-	printk("cpuboost_input_event: code=%d, value=%d\n",code, value);
+	pr_debug("cpuboost_input_event: code=%d, value=%d\n",code, value);
 
 	if (is_special_input_boost)
 		return;
